@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import ProfileCard from "./componnents/ProfileCard";
+import ProfileImage from "./Geek.png";
+import Name from "./componnents/Name";
+import Image from "./componnents/Image";
+import Description from "./componnents/Description";
+import Price from "./componnents/Price";
+import { Product } from "./product";
 function App() {
+  let MyName = 'Yassine ELMOUSS';
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProfileCard
+        source={Product.imagePath}
+        name={<Name />}
+        description={<Description />}
+        Price={<Price />}
+      />
+      <hr />
+      <h2>Hello , {MyName} </h2>
+      { MyName ? <img src={logo} alt="MyImage" className="img-fluid col-2" /> : "No Name"}
     </div>
   );
 }
